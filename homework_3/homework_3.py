@@ -37,4 +37,4 @@ while True:
         for note in sorted_notes:
             print("•", note)
     else:
-        print("Wrong command, try again")
+        print("Wrong command, try again.")
