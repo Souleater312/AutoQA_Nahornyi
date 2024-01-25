@@ -1,4 +1,4 @@
-"""
+
 def name_greeter():
     your_name = input("hi please tell me what`s your name")
     print(f"hallo {your_name}")
@@ -35,7 +35,7 @@ def make_pizza(*ingtidiens):
 make_pizza("cheeese")
 make_pizza("cheeese", "cheeese2", "cheeese3", "cheeese4")
 make_pizza("pineapple", "curse")
-"""
+
 def dogs(**dog_info):
     for key, value in dog_info.items():
         print(f"{key} : {value}")
