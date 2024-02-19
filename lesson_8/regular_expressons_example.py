@@ -11,8 +11,9 @@ import re
 \W -> [^a-zA-Z0-9_]
 
 $ - ends aue to pattern
-*  >=0 matches
-+  >=1 matches
+*   >=0 matches
++   >=1 matches
+?   0-1 matches
 {n} n matches
 """
 """
