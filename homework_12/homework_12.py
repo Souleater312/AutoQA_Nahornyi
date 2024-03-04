@@ -104,7 +104,7 @@ freedom_train.train_carts[0].add_passenger("Lesya Ukrainka", "Mariupol", 2),
 freedom_train.train_carts[0].add_passenger("Ivan Franko", "Mariupol", 3),
 freedom_train.train_carts[0].add_passenger("Volodymyr Vernadsky", "Melitopol", 4),
 freedom_train.train_carts[0].add_passenger("Hryhoriy Skovoroda", "Kharkiv", 5)
-freedom_train.train_carts[0].add_passenger("Ivan Mazepa", "Melitopol", 6),
+freedom_train.train_carts[0].add_passenger("Ivan Mazepa", "Berdyansk", 6),
 freedom_train.train_carts[0].add_passenger("Bohdan Khmelnytsky", "Berdyansk", 7),
 freedom_train.train_carts[0].add_passenger("Symon Petliura", "Zaporizhzhia", 8),
 freedom_train.train_carts[0].add_passenger("Stepan Bandera", "Mariupol", 9),
