@@ -61,3 +61,5 @@ if __name__ == '__main__':
     converter.add_row_to_csv('example.csv', ['John', 'Doe', '30', 'Male', '3000'])
     converter.read_csv_file('example.csv')
     print(len(converter._JSONConverter__lines))
+
+    # Домашнє не дороблено
