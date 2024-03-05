@@ -6,40 +6,31 @@ def converter():
     return JSONConverter()
 
 
-"""def test_add_row_to_csv(converter, tmp_path):
-    # Підготовка даних та виклик функції
-    converter.read_file('example.json')
-
-    # Використовуємо tmp_path для створення тимчасового файла
-    csv_file_path = tmp_path / 'example.csv'
-
-    converter.write_file(str(csv_file_path))
-    converter.add_row_to_csv(str(csv_file_path), ['John', 'Doe', '30', 'Male', '3000'])
-
-    # Перевірка результатів
-    # Зчитуємо дані з файлу, щоб перевірити кількість рядків
-    with open(csv_file_path, 'r') as csv_file:
-        lines = csv_file.readlines()
-
-    assert len(lines) == 5  # Перевірка кількості рядків у файлі після додавання
-    """
-
 def test_add_row_to_csv(converter):
     # Підготовка даних та виклик функції
-    converter.read_file('example.json')
-    converter.write_file('example.csv')
-    converter.add_row_to_csv('example.csv', ['John', 'Doe', '30', 'Male', '3000'])
+    converter.read_json_file('example.json')
+    converter.write_csv_file('example1.csv')
+    converter.cleanup()
+    converter.add_row_to_csv('example1.csv', ['John', 'Doe', '30', 'Male', '3000'])
+    converter.read_csv_file('example1.csv')
+
 
     # Перевірка результатів
-    assert len(converter._JSONConverter__lines) == 3  # Перевірка довжини __lines
-    assert converter._JSONConverter__lines[3]['first_name'] == 'John'  # Перевірка конкретного значення
+    assert len(converter._JSONConverter__lines) == 4
+    assert converter._JSONConverter__lines[3]['first_name'] == 'John'
 
 
 def test_remove_row_from_csv(converter):
     # Підготовка даних та виклик функції
-    converter.read_file('example.json')
-    converter.write_file('example.csv')
-    converter.remove_row_from_csv('example.csv', 0)
+    converter.read_json_file('example.json')
+    converter.write_csv_file('example1.csv')
+    converter.cleanup()
+    converter.add_row_to_csv('example1.csv', ['John', 'Doe', '30', 'Male', '3000'])
+    converter.read_csv_file('example1.csv')
+    len_value = len(converter._JSONConverter__lines)
+    converter.cleanup()
+    converter.remove_row_from_csv('example1.csv', len_value)
+    converter.read_csv_file('example1.csv')
 
     # Перевірка результатів
-    assert len(converter._JSONConverter__lines) == 0  # Перевірка довжини __lines після видалення
+    assert len(converter._JSONConverter__lines) == 3  # Перевірка довжини __lines після видалення

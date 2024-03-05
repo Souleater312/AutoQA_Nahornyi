@@ -50,6 +50,9 @@ class JSONConverter:
         else:
             print(f"Invalid row index: {row_index}")
 
+    def cleanup(self):
+        self.__lines=[]
+
 
 if __name__ == '__main__':
     converter = JSONConverter()
@@ -58,8 +61,7 @@ if __name__ == '__main__':
     #converter.read_file('example.json')
     #converter.write_file('example2.csv')
     print(len(converter._JSONConverter__lines))
+    converter.cleanup()
     converter.add_row_to_csv('example.csv', ['John', 'Doe', '30', 'Male', '3000'])
     converter.read_csv_file('example.csv')
     print(len(converter._JSONConverter__lines))
-
-    # Домашнє не дороблено
